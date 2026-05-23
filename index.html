@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MediGlow | Smart City Food Safety & Urban Health Platform</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- External CSS Files -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Auth radio controls (CSS-only state management) -->
+    <input type="radio" name="auth-state" id="auth-guest" hidden checked>
+    <input type="radio" name="auth-state" id="auth-logged" hidden>
+    <input type="radio" name="auth-panel" id="auth-form-fill" hidden checked>
+    <input type="radio" name="auth-panel" id="auth-link-fill" hidden>
+
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <header>
+        <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+            <div class="container-fluid">
+                <a href="#page-home" class="navbar-brand ms-lg-3" aria-label="MediGlow Home">
+                    <img src="imgs/logo.png" alt="MediGlow logo - Smart City Food Safety" width="50" height="50">
+                </a>
+                <button type="button" class="navbar-toggler me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_nav" aria-controls="offcanvas_nav" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="nav_id">
+                    <ul class="navbar-nav mx-auto" role="menubar">
+                        <li class="nav-item" role="none"><a class="nav-link nav_link_color" href="#page-home" role="menuitem">Home</a></li>
+                        <li class="nav-item dropdown" role="none">
+                            <a href="#" class="nav-link nav_link_color dropdown-toggle" data-bs-toggle="dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">Problems</a>
+                            <ul class="dropdown-menu dropdown_menu_for_nav_items">
+                                <li>
+                                    <div class="row g-1">
+                                        <div class="col-md-6"><a class="dropdown-item" href="consumer.html"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-bandaid-fill" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Consumers</h6><p>Health issues</p></div></div></a></div>
+                                        <div class="col-md-6"><a class="dropdown-item" href="food_challenges_page.html"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-fork-knife" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Unsafe Food</h6><p>Food safety risks</p></div></div></a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row g-1 mt-1">
+                                        <div class="col-md-6"><a class="dropdown-item" href="#page-industry"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Industry</h6><p>Environmental impact</p></div></div></a></div>
+                                        <div class="col-md-6"><a class="dropdown-item" href="environment.html"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-tree-fill" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Environment</h6><p>Pollution impact</p></div></div></a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" role="none">
+                            <a href="#" class="nav-link nav_link_color dropdown-toggle" data-bs-toggle="dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">Solutions</a>
+                            <ul class="dropdown-menu dropdown_menu_for_nav_items">
+                                <li>
+                                    <div class="row g-1">
+                                        <div class="col-md-6"><a class="dropdown-item" href="ai_detection.html"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-search" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>AI Detection</h6><p>Smart scanning</p></div></div></a></div>
+                                        <div class="col-md-6"><a class="dropdown-item" href="index.html#page-smart-packaging"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-box-seam-fill" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Smart Packaging</h6><p>Freshness tracking</p></div></div></a></div>
+                                        <div class="col-md-6"><a class="dropdown-item" href="modern_technology.html"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-cpu" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Modern Technology</h6><p>Sensers & apps</p></div></div></a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" role="none"><a class="nav-link nav_link_color" href="#page-awareness" role="menuitem">Awareness</a></li>
+                        <li class="nav-item" role="none"><a class="nav-link nav_link_color" href="#page-global" role="menuitem">Global View</a></li>
+                    </ul>
+                    <ul class="navbar-nav me-lg-3" role="menubar">
+                        <li class="nav-item" role="none"><a class="nav-link nav_link_color" href="#page-about" role="menuitem">Get In Touch</a></li>
+                    </ul>
+
+                    <!-- Logged-in user dropdown (large screens) -->
+                    <div class="auth-user dropdown logged_in_lg me-lg-4">
+                        <a href="#" class="d-flex align-items-center nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="User menu">
+                            <span class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white" style="width:32px;height:32px;font-size:0.8rem;" aria-hidden="true">A</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown_menu_for_profile">
+                            <li class="px-3 py-2"><div style="font-weight:600;">Anonymous</div></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><label for="auth-guest" class="dropdown-item text-danger" style="cursor:pointer;">Logout</label></li>
+                        </ul>
+                    </div>
+
+                    <!-- Guest login button (large screens) -->
+                    <div class="dropdown logged_out d-none d-lg-flex pe-lg-3">
+                        <a href="#" class="nav-user-icon-btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Login or sign up">
+                            <i class="bi bi-person-fill" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown_menu_for_profile">
+                            <li><a class="dropdown-item" href="#modal_login" data-bs-toggle="modal">Login</a></li>
+                            <li><a class="dropdown-item" href="#modal_register" data-bs-toggle="modal">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Offcanvas mobile menu -->
+                <div class="offcanvas offcanva_for_small_devices offcanvas-end d-lg-none" id="offcanvas_nav" tabindex="-1" aria-label="Mobile navigation menu">
+                    <div class="offcanvas-header offcanva_header_for_navbar">
+                        <a href="#page-home" class="navbar-brand"><img src="imgs/logo.png" height="32" alt="MediGlow"></a>
+                        <button type="button" class="btn-close btn-close-white pe-4" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+                    </div>
+                    <div class="offcanvas-body px-4 pt-3">
+                        <div class="logged_in_sm justify-content-center mb-3">
+                            <div class="dropdown">
+                                <a href="#" class="d-flex align-items-center nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-label="User menu"><span class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white" style="width:32px;height:32px;">A</span></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown_menu_for_profile">
+                                    <li class="px-3 py-2"><div>Anonymous</div></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><label for="auth-guest" class="dropdown-item text-danger">Logout</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="index.html">Home</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="index.html#page-awareness">Awareness</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="index.html#page-global">Global View</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="consumer.html" >Consumers</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="food_challenges_page.html" >Unsafe Food</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="environment.html" >Environment</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="ai_detection.html">AI Detection</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="index.html#page-industry" >Industry Impact</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="index.html#page-smart-packaging">Smart Packaging</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="modern_technology.html" >Modern Technology</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="index.html#page-about">About Us</a></li>
+                        </ul>
+                        <hr style="border-color:rgba(255,255,255,0.3);">
+                        <div class="d-flex justify-content-center logged_out gap-3">
+                            <a href="#modal_login_sm" data-bs-toggle="modal" class="btn btn-outline-light btn-sm">Login</a>
+                            <a href="#modal_register_sm" data-bs-toggle="modal" class="btn btn-light btn-sm">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ═══════════════ PAGE: HOME ═══════════════ -->
+    <main class="page-content" id="page-home">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-inner">
+                <div>
+                    <p class="brand">MediGlow</p>
+                    <h1 class="hero-title" id="hero-heading">Smarter cities begin with healthier people.</h1>
+                    <p class="hero-copy">MediGlow is a <strong>Smart City Food Safety System</strong> that helps consumers and food industries understand nutrition, detect contamination, and build sustainable urban health ecosystems. We make preventive healthcare practical so better choices happen every day across connected communities.</p>
+                    <a href="#problem-section" class="hero-btn">Explore the Platform</a>
+                </div>
+                <div class="circle-gallery" aria-label="Food safety and community wellness image collage">
+                    <figure class="quarter tl"><img src="gifs/gif1.gif" alt="Fresh healthy produce being inspected" loading="lazy"></figure>
+                    <figure class="quarter tr"><img src="gifs/gif2.gif" alt="Community wellness and healthcare" loading="lazy"></figure>
+                    <figure class="quarter bl"><img src="gifs/gif3.gif" alt="Food safety quality check process" loading="lazy"></figure>
+                    <figure class="quarter br"><img src="gifs/gif4.gif" alt="Urban community health monitoring" loading="lazy"></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem-section" aria-labelledby="problem-heading">
+            <div class="container" style="margin-top:5rem;">
+                <div class="row g-4">
+                    <h2 class="section-title" id="problem-heading" data-aos="fade-up">Urban Food Safety Challenges</h2>
+                    <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                        <article class="card-primary p-3 h-100">
+                            <div class="row align-items-center g-3">
+                                <div class="col-auto"><img src="unsafe_food.png" class="problem_img" alt="Unsafe food warning symbol" loading="lazy"></div>
+                                <div class="col"><h5 class="fw-bold">Unsafe Food in Cities</h5><p>Urban food supply chains often contain unsafe chemicals, artificial colors, or poor-quality ingredients that threaten public health.</p><a href="#" class="problem_link">Learn More</a></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left" data-aos-delay="150">
+                        <article class="card-primary p-3 h-100">
+                            <div class="row align-items-center g-3">
+                                <div class="col-auto"><img src="imgs/food_awareness.png" class="problem_img" alt="Food awareness education icon" loading="lazy"></div>
+                                <div class="col"><h5 class="fw-bold">Low Citizen Awareness</h5><p>Many urban residents lack knowledge about nutrition labels, food safety standards, and healthy eating practices.</p><a href="#" class="problem_link">Learn More</a></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+                        <article class="card-primary p-3 h-100">
+                            <div class="row align-items-center g-3">
+                                <div class="col-auto"><img src="imgs/industries_practices.png" class="problem_img" alt="Industrial food processing" loading="lazy"></div>
+                                <div class="col"><h5 class="fw-bold">Poor Industry Practices</h5><p>Urban food producers and vendors often bypass safety standards during processing, storage, and distribution.</p><a href="#" class="problem_link">Learn More</a></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left" data-aos-delay="250">
+                        <article class="card-primary p-3 h-100">
+                            <div class="row align-items-center g-3">
+                                <div class="col-auto"><img src="imgs/environmental_impact.png" class="problem_img" alt="Environmental pollution impact" loading="lazy"></div>
+                                <div class="col"><h5 class="fw-bold">Environmental Impact</h5><p>Chemical waste from urban food industries pollutes water, soil, and air — degrading the city ecosystem.</p><a href="#" class="problem_link">Learn More</a></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why It Matters -->
+        <section aria-labelledby="matters-heading">
+            <div class="container">
+                <div class="row g-5 mt-5">
+                    <h2 class="section-title" id="matters-heading" data-aos="fade-up">Why It Matters for Urban Communities</h2>
+                    <div class="col-lg-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="100">
+                        <article class="card-secondary w-100"><h5 class="text-center">Public Health</h5><p class="mt-3">Unsafe food leads to increased disease burden on city healthcare systems, weakened immunity, and long-term chronic conditions.</p></article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+                        <article class="card-secondary w-100"><h5 class="text-center">Industrial Responsibility</h5><p class="mt-3">Poor urban food standards affect entire neighborhoods. Smart monitoring holds industries accountable.</p></article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="300">
+                        <article class="card-secondary w-100"><h5 class="text-center">City Sustainability</h5><p class="mt-3">Food waste and chemical runoff pollute urban water sources and green spaces, undermining sustainability goals.</p></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart Solutions -->
+        <section id="solutions-section" aria-labelledby="solutions-heading">
+            <div class="container mt-5">
+                <div class="row g-5 justify-content-center">
+                    <h2 class="section-title" id="solutions-heading" data-aos="fade-up">Smart City Solutions</h2>
+                    <div class="col-lg-4 col-md-6 mt-5" data-aos="flip-left" data-aos-delay="100">
+                        <article class="card-solution">
+                            <div class="solution_icon"><i class="bi bi-search" aria-hidden="true"></i></div>
+                            <h4>AI Detection Systems</h4>
+                            <p>AI-powered urban food scanners analyze safety and detect harmful chemicals in real time across city markets.</p>
+                            <a href="#page-ai-detection" class="solution_btn">Explore More</a>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-5" data-aos="flip-left" data-aos-delay="200">
+                        <article class="card-solution">
+                            <div class="solution_icon"><i class="bi bi-box-seam-fill" aria-hidden="true"></i></div>
+                            <h4>Smart Packaging</h4>
+                            <p>Connected packaging tracks freshness and displays contamination risks — integrated into city-wide monitoring networks.</p>
+                            <a href="#page-smart-packaging" class="solution_btn">Explore More</a>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-5" data-aos="flip-left" data-aos-delay="300">
+                        <article class="card-solution">
+                            <div class="solution_icon"><i class="bi bi-laptop" aria-hidden="true"></i></div>
+                            <h4>IoT Infrastructure</h4>
+                            <p>Sensors, smart apps, and connected devices create a city-wide quality control network across the entire food supply chain.</p>
+                            <a href="#page-ai-detection" class="solution_btn">Explore More</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section aria-labelledby="faq-heading">
+            <div class="container mb-5 pb-4">
+                <h2 class="faq_title" id="faq-heading" data-aos="fade-up" style="margin-top: 6rem;">Frequently Asked Questions</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-10 mt-5" data-aos="fade-right">
+                        <form aria-label="Ask a question form">
+                            <div class="row g-2 mb-2">
+                                <div class="col-lg-6"><label class="form-label" for="faq-name">Your Name:</label><input class="form_boxes" id="faq-name" type="text" placeholder="e.g., Maria"></div>
+                                <div class="col-lg-6"><label class="form-label" for="faq-email">Your Email:</label><input class="form_boxes" id="faq-email" type="email" placeholder="hello@example.com"></div>
+                            </div>
+                            <div class="row mb-2"><div class="col-lg-12"><label class="form-label" for="faq-subject">Subject:</label><input class="form_boxes" id="faq-subject" type="text" placeholder="Food safety inquiry"></div></div>
+                            <div class="row mb-2"><div class="col-lg-12"><label class="form-label" for="faq-question">Your Question:</label><textarea class="form_boxes" id="faq-question" rows="5" placeholder="Write your question..."></textarea></div></div>
+                            <button type="button" class="form_btn" data-bs-toggle="modal" data-bs-target="#succcessModal">Send Question</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-8 col-md-10 mt-5" data-aos="fade-left">
+                        <div class="accordion accordion-flush" id="parentaccordion">
+                            <div class="accordion-item mb-2"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion-1" aria-expanded="true" aria-controls="accordion-1">How does unsafe food affect urban communities?</button></h2><div class="collapse show accordion-collapse" id="accordion-1" data-bs-parent="#parentaccordion"><div class="accordion-body">Unsafe food may contain harmful chemicals or contamination, leading to food poisoning outbreaks that strain city hospitals, weaken community immunity, and create long-term public health crises.</div></div></div>
+                            <div class="accordion-item mb-2"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-2" aria-expanded="false" aria-controls="accordion-2">How do industries impact smart city food safety?</button></h2><div class="collapse accordion-collapse" id="accordion-2" data-bs-parent="#parentaccordion"><div class="accordion-body">Poor waste disposal, excessive chemical use, and unmonitored production methods pollute urban resources and reduce food quality across the city supply chain.</div></div></div>
+                            <div class="accordion-item mb-2"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-3" aria-expanded="false" aria-controls="accordion-3">How can technology improve urban food safety?</button></h2><div class="collapse accordion-collapse" id="accordion-3" data-bs-parent="#parentaccordion"><div class="accordion-body">AI food testing, smart packaging sensors, and IoT monitoring networks detect contamination in real time — sending instant alerts across the smart city infrastructure.</div></div></div>
+                            <div class="accordion-item mb-2"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-4" aria-expanded="false" aria-controls="accordion-4">Why is food safety critical for sustainable cities?</button></h2><div class="collapse accordion-collapse" id="accordion-4" data-bs-parent="#parentaccordion"><div class="accordion-body">Safe food and clean water are foundational to building resilient, healthy urban communities. Without them, cities cannot achieve sustainability or public health goals.</div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════════════ PAGE: AWARENESS ═══════════════ -->
+    <div class="page-content" id="page-awareness">
+        <section class="awareness-hero" aria-labelledby="awareness-heading">
+            <div class="container"><div class="row"><div class="col-lg-7" data-aos="fade-right"><h1 id="awareness-heading">The Hidden Crisis Inside Our Urban Food System</h1><p>Food contamination, chemical exposure, and environmental pollution threaten millions of city dwellers. Learn how unsafe food impacts public health and urban ecosystems.</p></div></div></div>
+        </section>
+        <section class="py-5" aria-labelledby="dangers-heading">
+            <div class="container"><h2 class="awareness-section-title" id="dangers-heading" data-aos="fade-up">Silent Dangers in Urban Food Supply</h2><p class="awareness-section-sub">How unsafe food threatens city public health and the environment</p><div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right"><article class="card-secondary p-0 overflow-hidden"><img src="imgs/food_awareness.png" alt="Unsafe food exposure risks in urban areas" class="w-100" style="height:260px;object-fit:cover;" loading="lazy"><div class="p-4"><span class="tag">PUBLIC HEALTH THREAT</span><h4>Unsafe Food Exposure</h4><p>Contaminated food containing chemicals, dyes, and bacteria continues to enter urban supply chains in many developing cities.</p></div></article></div>
+                <div class="col-lg-6" data-aos="fade-left"><article class="card-secondary p-0 overflow-hidden"><img src="imgs/industriy_awareness.png" alt="Health consequences of food contamination" class="w-100" style="height:260px;object-fit:cover;" loading="lazy"><div class="p-4"><span class="tag">HEALTH CONSEQUENCES</span><h4>The Dangerous Effects of Contamination</h4><p>WHO reports unsafe food can cause over 200 diseases — from acute food poisoning to long-term organ damage and cancer.</p></div></article></div>
+            </div></div>
+        </section>
+        <section class="py-5" aria-labelledby="risks-heading">
+            <div class="container"><h2 class="awareness-section-title" id="risks-heading">Health Risks Hiding in Everyday Meals</h2><p class="awareness-section-sub">Common dangers caused by poor food safety systems in urban environments</p><div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in"><article class="card-primary text-center p-4"><div class="mini-icon"><i class="bi bi-virus" aria-hidden="true"></i></div><h5>Food Poisoning</h5><p>Bacteria like Salmonella from poor hygiene and contaminated ingredients cause severe illness in dense urban populations.</p></article></div>
+                <div class="col-md-4" data-aos="zoom-in"><article class="card-primary text-center p-4"><div class="mini-icon"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></div><h5>Chemical Exposure</h5><p>Artificial dyes, pesticides, and preservatives accumulate in the body and can slowly damage organs over years of exposure.</p></article></div>
+                <div class="col-md-4" data-aos="zoom-in"><article class="card-primary text-center p-4"><div class="mini-icon"><i class="bi bi-globe" aria-hidden="true"></i></div><h5>Food Waste Pollution</h5><p>Urban landfill methane from food waste accelerates climate change and harms the surrounding city ecosystem.</p></article></div>
+            </div></div>
+        </section>
+        <section class="py-5" aria-labelledby="environment-heading">
+            <div class="container"><div class="impact-section"><div class="row align-items-center g-5"><div class="col-lg-7" data-aos="fade-right"><img src="imgs/food_awareness.png" class="w-100 rounded" alt="Food industry environmental impact overview" loading="lazy"></div><div class="col-lg-5" data-aos="fade-left"><div class="issue-list"><h5 id="environment-heading">How Urban Food Systems Harm the Environment</h5><ul><li>Methane from food waste contributes to global warming.</li><li>Plastic packaging pollutes city rivers and oceans.</li><li>Deforestation for farming destroys natural habitats.</li><li>Chemicals and factory waste contaminate urban air and water.</li></ul></div></div></div></div></div>
+        </section>
+        <section class="py-5" aria-labelledby="innovations-heading">
+            <div class="container"><h2 class="awareness-section-title" id="innovations-heading">Smart Innovations for Safer Cities</h2><p class="awareness-section-sub">Technology-driven solutions improving urban food safety and sustainability</p><div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up"><article class="card-primary text-center p-4"><div class="solution-icon-aw"><i class="bi bi-search" aria-hidden="true"></i></div><h5>AI Detection</h5><p>Artificial intelligence identifies contaminated food faster.</p><a href="#page-ai-detection" class="solution-btn-aw">Learn more</a></article></div>
+                <div class="col-md-3" data-aos="fade-up"><article class="card-primary text-center p-4"><div class="solution-icon-aw"><i class="bi bi-box-seam-fill" aria-hidden="true"></i></div><h5>Smart Packaging</h5><p>Connected packaging tracks freshness and reduces waste.</p><a href="#page-smart-packaging" class="solution-btn-aw">Learn more</a></article></div>
+                <div class="col-md-3" data-aos="fade-up"><article class="card-primary text-center p-4"><div class="solution-icon-aw"><i class="bi bi-router-fill" aria-hidden="true"></i></div><h5>IoT Monitoring</h5><p>Sensors monitor storage conditions for city-wide safety.</p><button class="solution-btn-aw">Learn more</button></article></div>
+                <div class="col-md-3" data-aos="fade-up"><article class="card-primary text-center p-4"><div class="solution-icon-aw"><i class="bi bi-flower3" aria-hidden="true"></i></div><h5>Sustainable Systems</h5><p>Eco-friendly urban systems reduce pollution and protect nature.</p><button class="solution-btn-aw">Learn more</button></article></div>
+            </div></div>
+        </section>
+    </div>
+
+    <!-- ═══════════════ PAGE: GLOBAL VIEW ═══════════════ -->
+    <div class="page-content" id="page-global">
+        <section class="comparison_section py-5" aria-labelledby="global-heading">
+            <div class="container">
+                <div class="text-center comparison_heading">
+                    <span class="mini_tag">GLOBAL FOOD SAFETY</span>
+                    <h1 id="global-heading">Myanmar vs Smart City Food Systems</h1>
+                    <p>Comparing Myanmar with countries using advanced food technology shows how smart systems, sustainable packaging, and AI monitoring can improve urban consumer safety and industrial standards.</p>
+                </div>
+                <div class="row g-4 mt-2">
+                    <!-- Myanmar Card -->
+                    <div class="col-xl-6" data-aos="fade-up"><article class="country_box myanmar_box h-100"><div class="country_image"><img src="myanmar_market.jpg" alt="Traditional market in Myanmar" loading="lazy"></div><div class="country_content"><div class="country_top"><span>🇲🇲 Developing System</span><h2>Myanmar</h2></div><p>Myanmar is still improving its urban food safety and industrial monitoring systems. Many local markets rely on basic packaging and manual handling.</p><div class="feature_grid"><div class="feature_item"><h5>Food Packaging</h5><p>Limited smart packaging and incomplete labeling.</p></div><div class="feature_item"><h5>Industry Monitoring</h5><p>Food quality checks are still mostly manual.</p></div><div class="feature_item"><h5>Consumer Safety</h5><p>Concerns about chemicals and hygiene remain.</p></div><div class="feature_item"><h5>Technology Use</h5><p>Digital tracking and AI are still developing.</p></div></div></div></article></div>
+                    <!-- Singapore Card -->
+                    <div class="col-xl-6" data-aos="fade-up"><article class="country_box smart_box h-100"><div class="country_image"><img src="singapore_food.jpeg" alt="Modern food technology in Singapore" loading="lazy"></div><div class="country_content"><div class="country_top"><span>🇸🇬 Smart Technology Leader</span><h2>Singapore</h2></div><p>Singapore uses advanced technology and strict regulations to maintain high food safety standards across its urban environment.</p><div class="feature_grid"><div class="feature_item"><h5>Smart Packaging</h5><p>Packaging monitors freshness and temperature.</p></div><div class="feature_item"><h5>AI Detection</h5><p>AI systems detect unsafe food quickly.</p></div><div class="feature_item"><h5>Food Traceability</h5><p>QR systems track food from source to consumer.</p></div><div class="feature_item"><h5>Sustainability</h5><p>Eco-friendly production and waste reduction.</p></div></div></div></article></div>
+                    <!-- Myanmar Industries -->
+                    <div class="col-xl-6" data-aos="fade-up"><article class="country_box myanmar_box h-100"><div class="country_image"><img src="imgs/industry_img.png" alt="Myanmar food industry operations" loading="lazy"></div><div class="country_content"><div class="country_top"><span>🇲🇲 Current Challenges</span><h2>Myanmar Industries</h2></div><p>Urban food industries in Myanmar are growing rapidly but still face quality control and sustainability challenges.</p><div class="feature_grid"><div class="feature_item"><h5>Storage Systems</h5><p>Limited cold-chain and temperature monitoring.</p></div><div class="feature_item"><h5>Food Waste</h5><p>Waste management systems need improvement.</p></div><div class="feature_item"><h5>Consumer Awareness</h5><p>Nutrition awareness is still increasing.</p></div><div class="feature_item"><h5>Regulations</h5><p>Safety regulations are improving gradually.</p></div></div></div></article></div>
+                    <!-- Japan Card -->
+                    <div class="col-xl-6" data-aos="fade-up"><article class="country_box smart_box h-100"><div class="country_image"><img src="imgs/janpan_food.jpg" alt="Japanese food safety technology" loading="lazy"></div><div class="country_content"><div class="country_top"><span>🇯🇵 Advanced Smart Systems</span><h2>Japan</h2></div><p>Japan combines strict hygiene with modern smart packaging and digital monitoring across its urban food infrastructure.</p><div class="feature_grid"><div class="feature_item"><h5>Smart Labels</h5><p>QR labels provide full nutrition and safety data.</p></div><div class="feature_item"><h5>Eco Packaging</h5><p>Sustainable, recyclable packaging widely used.</p></div><div class="feature_item"><h5>Digital Monitoring</h5><p>Sensors monitor freshness during transport.</p></div><div class="feature_item"><h5>Clean Production</h5><p>High industrial hygiene standards.</p></div></div></div></article></div>
+                    <!-- South Korea -->
+                    <div class="col-xl-6" data-aos="fade-up"><article class="country_box smart_box h-100"><div class="country_image"><img src="imgs/korea_food.avif" alt="South Korean food innovation" loading="lazy"></div><div class="country_content"><div class="country_top"><span>🇰🇷 Digital Food Innovation</span><h2>South Korea</h2></div><p>South Korea uses smart factories, AI monitoring, and automated inspection to protect urban consumers.</p><div class="feature_grid"><div class="feature_item"><h5>AI Quality Checks</h5><p>AI detects contamination and damage quickly.</p></div><div class="feature_item"><h5>Smart Factories</h5><p>Automated systems improve hygiene.</p></div><div class="feature_item"><h5>Digital Labels</h5><p>Consumers scan for full product details.</p></div><div class="feature_item"><h5>Cold Chain Systems</h5><p>Advanced storage keeps food fresh.</p></div></div></div></article></div>
+                    <!-- Germany -->
+                    <div class="col-xl-6" data-aos="fade-up"><article class="country_box smart_box h-100"><div class="country_image"><img src="imgs/germany_food.webp" alt="German sustainable food systems" loading="lazy"></div><div class="country_content"><div class="country_top"><span>🇩🇪 Sustainable Food Systems</span><h2>Germany</h2></div><p>Germany focuses on sustainable urban food industries, eco-packaging, and strict environmental regulations.</p><div class="feature_grid"><div class="feature_item"><h5>Eco Packaging</h5><p>Recyclable and biodegradable materials.</p></div><div class="feature_item"><h5>Strict Regulations</h5><p>Strong hygiene and safety standards.</p></div><div class="feature_item"><h5>Waste Reduction</h5><p>Smart systems reduce urban food waste.</p></div><div class="feature_item"><h5>Consumer Transparency</h5><p>Detailed ingredient and nutrition info.</p></div></div></div></article></div>
+                    <!-- USA -->
+                    <div class="col-xl-6" data-aos="fade-up"><article class="country_box smart_box h-100"><div class="country_image"><img src="us_food.png" alt="US AI food monitoring" loading="lazy"></div><div class="country_content"><div class="country_top"><span>🇺🇸 AI & Smart Monitoring</span><h2>United States</h2></div><p>The US uses AI, IoT sensors, and large-scale monitoring to improve urban food safety and efficiency.</p><div class="feature_grid"><div class="feature_item"><h5>IoT Sensors</h5><p>Real-time temperature and storage monitoring.</p></div><div class="feature_item"><h5>Food Traceability</h5><p>Digital supply chain tracking.</p></div><div class="feature_item"><h5>AI Predictions</h5><p>Contamination risk prediction models.</p></div><div class="feature_item"><h5>Smart Packaging</h5><p>Detects spoilage and freshness.</p></div></div></div></article></div>
+                    <!-- Thailand -->
+                    <div class="col-xl-6" data-aos="fade-up"><article class="country_box smart_box h-100"><div class="country_image"><img src="thailand_food.webp" alt="Thai food industry growth" loading="lazy"></div><div class="country_content"><div class="country_top"><span>🇹🇭 ASEAN Food Industry Growth</span><h2>Thailand</h2></div><p>Thailand has improved urban food export quality through better packaging and modern industrial technology.</p><div class="feature_grid"><div class="feature_item"><h5>Export Standards</h5><p>International food safety compliance.</p></div><div class="feature_item"><h5>Modern Packaging</h5><p>Freshness-preserving packaging systems.</p></div><div class="feature_item"><h5>Food Inspections</h5><p>Regular industrial quality checks.</p></div><div class="feature_item"><h5>Technology Growth</h5><p>Smart production increasingly adopted.</p></div></div></div></article></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+
+
+
+
+    <!-- ═══════════════ PAGE: INDUSTRY IMPACT ═══════════════ -->
+    <div class="page-content page-industry" id="page-industry">
+        <section class="industry-hero" aria-labelledby="industry-heading"><div class="container"><h1 id="industry-heading" data-aos="fade-up">The Environmental Impact of Urban Food Industry</h1><p class="lead mt-3" data-aos="fade-up" data-aos-delay="100">Food production supports billions, but modern industrial systems create massive environmental pressure through pollution, greenhouse gas emissions, deforestation, water overconsumption, and urban food waste.</p></div></section>
+        <div class="container py-5">
+            <h2 class="industry-section-title" data-aos="fade-up">Key Industrial Challenges</h2>
+            <p class="industry-section-sub" data-aos="fade-up">How urban food production harms ecosystems and city environments</p>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up"><article class="industry-feature-card"><div class="feature-icon"><i class="bi bi-trash3" aria-hidden="true"></i></div><h3>Food Waste</h3><p class="mb-0">Nearly one-third of all food produced globally is wasted. This wastes energy, land, water, labor, and increases methane emissions in city landfills.</p></article></div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100"><article class="industry-feature-card"><div class="feature-icon"><i class="bi bi-flower2" aria-hidden="true"></i></div><h3>Industrial Farming</h3><p class="mb-0">Modern farming relies heavily on pesticides, chemical fertilizers, and machinery that damage urban ecosystems and pollute water systems.</p></article></div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200"><article class="industry-feature-card"><div class="feature-icon"><i class="bi bi-building" aria-hidden="true"></i></div><h3>Urban Waste</h3><p class="mb-0">Cities produce large amounts of restaurant and household food waste, placing pressure on landfills and increasing greenhouse gases.</p></article></div>
+            </div>
+            <div class="industry-stats-band mt-5" data-aos="fade-up">
+                <div class="row g-4 text-center">
+                    <div class="col-md-4"><div class="industry-stat">30%</div><p>of global greenhouse gas emissions are connected to food systems.</p></div>
+                    <div class="col-md-4"><div class="industry-stat">70%</div><p>of freshwater use worldwide is linked to agriculture and food production.</p></div>
+                    <div class="col-md-4"><div class="industry-stat">1/3</div><p>of food produced globally is wasted every year.</p></div>
+                </div>
+            </div>
+            <div class="row g-4 mt-5 align-items-stretch" data-aos="fade-up">
+                <div class="col-lg-6"><article class="industry-visual-block h-100"><img src="imgs/industries_practices.png" alt="Industrial food production practices" loading="lazy"><div class="visual-caption"><h4 class="fw-bold mb-2" style="color:var(--medi-primary);">Industrial Practices</h4><p class="mb-0">Large-scale processing and distribution can prioritize speed over safety, increasing pollution and waste across urban supply chains.</p></div></article></div>
+                <div class="col-lg-6"><article class="industry-visual-block h-100"><img src="imgs/environmental_impact.png" alt="Environmental impact of food industry" loading="lazy"><div class="visual-caption"><h4 class="fw-bold mb-2" style="color:var(--medi-primary);">Environmental Damage</h4><p class="mb-0">From farm to landfill, the food industry drives deforestation, water depletion, and greenhouse emissions that affect smart city sustainability goals.</p></div></article></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ PAGE: SMART PACKAGING ═══════════════ -->
+    <div class="page-content page-smart-packaging" id="page-smart-packaging">
+        <section class="packaging-hero" aria-labelledby="packaging-heading"><div class="container"><h1 id="packaging-heading" data-aos="fade-up">Smart Packaging for Sustainable Cities</h1><p class="lead mt-3" data-aos="fade-up" data-aos-delay="100">Modern packaging systems are evolving into smarter, cleaner, and more sustainable solutions that reduce urban waste and improve environmental health.</p></div></section>
+        <div class="container py-5">
+            <h2 class="packaging-section-title" data-aos="fade-up">Innovations in Urban Packaging</h2>
+            <p class="packaging-section-sub" data-aos="fade-up">Technology and sustainable materials protecting consumers and the environment</p>
+            <div class="row align-items-center g-4 packaging-feature-block pt-0 mb-4" data-aos="fade-up">
+                <div class="col-lg-6"><div class="sensor-icon mb-3"><i class="bi bi-broadcast" aria-hidden="true"></i></div><h2 class="fw-bold mb-3" style="color:var(--medi-primary);">Sensor‑Based Freshness Detection</h2><p class="lead text-muted">Smart packaging uses special sensors and color‑changing materials to detect when food becomes unsafe. These sensors react to bacteria growth, temperature changes, or gases released by spoiled food.</p><p class="mb-0">For example, packaging could <strong>turn red</strong> when meat or dairy products are expired — reducing food poisoning and improving urban food safety while lowering waste.</p></div>
+                <div class="col-lg-6"><img src="imgs/future_food.png" class="w-100" alt="Smart sensor packaging detecting food freshness" loading="lazy"></div>
+            </div>
+            <hr class="packaging-divider ">
+            <div class="row align-items-center g-4 packaging-feature-block pt-0" data-aos="fade-up">
+                <div class="col-lg-6 order-lg-2"><div class="sensor-icon mb-3"><i class="bi bi-tree" aria-hidden="true"></i></div><h2 class="fw-bold mb-3" style="color:var(--medi-primary);">Bamboo‑Based Eco Packaging</h2><p class="lead text-muted">Bamboo is a smart, sustainable material for eco‑friendly packaging. It is renewable, growing extremely fast, and biodegradable — decomposing naturally without long‑term urban pollution.</p><p class="mb-0">Bamboo packaging is strong, lightweight, and durable — perfect for replacing single‑use plastics in city food containers, utensils, and shipping materials.</p></div>
+                <div class="col-lg-6 order-lg-1 "><img src="bamboo_package.png" class="w-100" alt="Eco-friendly sustainable food packaging" loading="lazy"></div>
+            </div>
+            <h2 class="packaging-section-title mt-5 pt-3" data-aos="fade-up">Sustainable Packaging Benefits</h2>
+            <p class="packaging-section-sub" data-aos="fade-up">Why smart packaging matters for healthier cities</p>
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-md-4"><article class="packaging-benefit-card"><div class="benefit-icon"><i class="bi bi-recycle" aria-hidden="true"></i></div><h3>Biodegradable</h3><p class="mb-0">Breaks down naturally without harming the urban environment.</p></article></div>
+                <div class="col-md-4"><article class="packaging-benefit-card"><div class="benefit-icon"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></div><h3>Reusable</h3><p class="mb-0">Reduces single-use plastic waste across city supply chains.</p></article></div>
+                <div class="col-md-4"><article class="packaging-benefit-card"><div class="benefit-icon"><i class="bi bi-box-seam" aria-hidden="true"></i></div><h3>Recyclable</h3><p class="mb-0">Materials can be reused in new urban production cycles.</p></article></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════ PAGE: ABOUT US ═══════════════ -->
+    <div class="page-content" id="page-about" style="background: #f4faf7;">
+        <section class="about_contact_section" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4"><article class="info_card"><div class="info_icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></div><h4>Our Location</h4><p>Myanmar, Yangon, Mingalardon</p></article></div>
+                    <div class="col-lg-4"><article class="info_card"><div class="info_icon"><i class="bi bi-envelope-fill" aria-hidden="true"></i></div><h4>Email Us</h4><p>mediglow@gmail.com</p></article></div>
+                    <div class="col-lg-4"><article class="info_card"><div class="info_icon"><i class="bi bi-globe2" aria-hidden="true"></i></div><h4>Our Goal</h4><p>Creating safer, smarter urban food systems for the future.</p></article></div>
+                </div>
+                <div class="row mt-5 g-4">
+                    <div class="col-lg-7"><div class="main_box"><span class="mini_tag" style="position: relative; top: -15px;">ABOUT OUR PROJECT</span><h2 id="about-heading">Smart City Food <span>Future</span></h2><p>Our project focuses on how modern technologies such as Artificial Intelligence, IoT, smart packaging, and digital monitoring systems can improve urban food safety, hygiene, sustainability, and industrial efficiency — building healthier smart cities.</p><form aria-label="Contact form"><label class="form-label" for="about-name">FULL NAME</label><input type="text" class="form_boxes" id="about-name" placeholder="Your full name"><label class="form-label" for="about-email">EMAIL ADDRESS</label><input type="email" class="form_boxes" id="about-email" placeholder="Your email"><label class="form-label" for="about-message">MESSAGE</label><textarea rows="5" class="form_boxes" id="about-message" placeholder="Write your message here..."></textarea><button type="button" class="submit_btn" data-bs-toggle="modal" data-bs-target="#successModal">Send Message</button></form></div></div>
+                    <div class="col-lg-5">
+                        <div class="side_card vision_card"><h4>Our Vision</h4><p>To build a future where smart technologies create safer, cleaner, and more sustainable urban food systems for people around the world.</p></div>
+                        <div class="side_card mission_card"><h4>Our Mission</h4><p>Our mission is to raise awareness about modern food technologies and encourage the use of smart systems to improve urban food safety and industrial sustainability.</p></div>
+                        <div class="side_card social_box"><h4>Connect With Us</h4><div class="social_icons"><a href="mailto:shinphonethant@edusnschool.co.uk" aria-label="Contact via Microsoft Teams"><i class="bi bi-microsoft-teams" aria-hidden="true"></i></a><a href="https://t.me/donutehero" aria-label="Contact via Telegram"><i class="bi bi-telegram" aria-hidden="true"></i></a><a href="#" aria-label="Follow on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container team_section mt-5" aria-labelledby="team-heading">
+            <div class="text-center mb-5"><span class="mini_tag">OUR TEAM</span><h2 class="team_heading" id="team-heading">Meet Our Members</h2><p>The people behind our smart city food safety research project.</p></div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6"><article class="member_card"><div class="member_image"><img src="lukey.jpg" alt="Saw Lukey Lay Thar Wah - Coder 1" loading="lazy"></div><div class="member_content"><h4>Saw Lukey Lay Thar Wah</h4><span>Coder #1</span><p>Focuses on AI systems, IoT devices, and food monitoring technology.</p></div></article></div>
+                <div class="col-lg-3 col-md-6"><article class="member_card"><div class="member_image"><img src="imgs/indi.jpg" alt="Shin Phone Thant - Coder 2" loading="lazy"></div><div class="member_content"><h4>Shin Phone Thant @ Indi</h4><span>Coder #2</span><p>Researching smart food systems and modern industrial technology.</p></div></article></div>
+                <div class="col-lg-3 col-md-6"><article class="member_card"><div class="member_image"><img src="imgs/lin.png" alt="Lin Thuriya Pho Hlaing - Coder 3" loading="lazy"></div><div class="member_content"><h4>Lin Thuriya Pho Hlaing</h4><span>Coder #3</span><p>Collects information and compares food industry systems globally.</p></div></article></div>
+                <div class="col-lg-3 col-md-6"><article class="member_card"><div class="member_image"><img src="imgs/ciin_sian_kem.jpg" alt="Ciin Sian Kem - Coder 4" loading="lazy"></div><div class="member_content"><h4>Ciin Sian Kem</h4><span>Coder #4</span><p>Creates visual designs, presentation layouts, and website structure.</p></div></article></div>
+            </div>
+        </section>
+        <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content text-center p-4"><div class="modal-body"><div style="width:70px;height:70px;margin:auto;border-radius:50%;background:linear-gradient(135deg,#008170,#00b89c);display:flex;align-items:center;justify-content:center;color:white;font-size:32px;" aria-hidden="true"><i class="bi bi-check-lg"></i></div><h3 class="mt-4 fw-bold">Thank You!</h3><p class="text-muted">Your message has been sent successfully. We will contact you soon.</p><button class="btn btn-success px-4 mt-2" data-bs-dismiss="modal">Close</button></div></div></div></div>
+    </div>
+
+    <!-- ═══════════════ MODALS ═══════════════ -->
+    <div class="modal fade" data-bs-backdrop="static" id="succcessModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Question Submitted</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body text-center"><h4>Thank You!</h4><p>Your question has been successfully sent.</p></div><div class="modal-footer justify-content-center"><button class="btn btn-success rounded-pill" data-bs-dismiss="modal">OK</button></div></div></div></div>
+
+    <!-- Large Login Modal -->
+    <div class="modal fade" data-bs-backdrop="static" id="modal_login" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3 btn-close-white" data-bs-dismiss="modal" style="z-index:10;" aria-label="Close login modal"></button><div class="row g-0"><div class="col-md-6 modal-image-col" style="background-image: url('mohinga.jpg');" role="img" aria-label="Myanmar traditional dish"></div><div class="col-md-6 modal-form-col"><div class="form-scroll"><h2 class="auth-title">Welcome back</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email address"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><div class="text-end mb-3"><a href="#modal_forgot" data-bs-toggle="modal" style="color: var(--medi-primary);">Forgot password?</a></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Log In</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill">
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.08 24.08 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                        Continue with Google
+                    </label>
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        Continue with GitHub
+                    </label>
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                        Continue with Apple
+                    </label>
+                    <hr class="auth-divider">
+                    <p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Login with email & password?</label></p>
+                </div><div class="auth-signup-link">Don't have an account? <a href="#modal_register" data-bs-toggle="modal" data-bs-target="#modal_register" data-bs-dismiss="modal">Sign Up</a></div></div><div class="auth-footer"><a href="#">Terms</a><a href="#">Privacy Policy</a></div></div></div></div></div></div>
+
+    <!-- Large Register Modal -->
+    <div class="modal fade" data-bs-backdrop="static" id="modal_register" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3 btn-close-white" data-bs-dismiss="modal" style="z-index:10;" aria-label="Close register modal"></button><div class="row g-0"><div class="col-md-6 modal-image-col" style="background-image: url('mohinga.jpg');" role="img" aria-label="Myanmar traditional dish"></div><div class="col-md-6 modal-form-col"><div class="form-scroll"><h2 class="auth-title">Create your account</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="text" placeholder="Username" aria-label="Username"></div><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email address"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Sign Up</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill">
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.08 24.08 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                        Continue with Google
+                    </label>
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        Continue with GitHub
+                    </label>
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                        Continue with Apple
+                    </label>
+                    <hr class="auth-divider">
+                    <p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Sign up with email & password?</label></p>
+                </div><div class="auth-signup-link">Already have an account? <a href="#modal_login" data-bs-toggle="modal" data-bs-dismiss="modal">Log In</a></div></div><div class="auth-footer"><a href="#">Terms</a><a href="#">Privacy Policy</a></div></div></div></div></div></div>
+
+    <!-- Small modals (unchanged) -->
+    <div class="modal fade" data-bs-backdrop="static" id="modal_login_sm" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:20px;"><div class="modal-body p-4 position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button><h2 class="auth-title">Welcome back</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><div class="text-end mb-3"><a href="#modal_forgot" data-bs-toggle="modal" style="color:var(--medi-primary);">Forgot password?</a></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Log In</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill"><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Google</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with GitHub</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Apple</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Login with email & password?</label></p></div><div class="auth-signup-link">Don't have an account? <a href="#modal_register_sm" data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</a></div></div></div></div></div>
+    <div class="modal fade" data-bs-backdrop="static" id="modal_register_sm" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:20px;"><div class="modal-body p-4 position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button><h2 class="auth-title">Create your account</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="text" placeholder="Username" aria-label="Username"></div><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Sign Up</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill"><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Google</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with GitHub</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Apple</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Sign up with email & password?</label></p></div><div class="auth-signup-link">Already have an account? <a href="#modal_login_sm" data-bs-toggle="modal" data-bs-dismiss="modal">Log In</a></div></div></div></div></div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" data-bs-backdrop="static" id="modal_forgot" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:20px;"><div class="modal-header"><h5 class="modal-title">Reset Password</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="mb-3"><input class="auth-email-input" type="password" placeholder="New Password" aria-label="New password"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Confirm Password" aria-label="Confirm password"></div><label class="auth-email-btn" data-bs-dismiss="modal">Reset</label></div></div></div></div>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row g-5 justify-content-center">
+                <!-- Left -->
+                <div class="col-lg-4">
+                    <div class="footer_logo">
+                        <div class="logo_footer">
+                            <img src="imgs/logo.png" alt="logo">
+                        </div>
+                        <h2>MediGlow</h2>
+                    </div>
+                    <p class="footer_text">
+                        Smart food technologies helping create safer,
+                        cleaner, and more sustainable food systems
+                        for future smart cities.
+                    </p>
+                    <div class="social_links">
+                        <a href="#">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer_title">
+                        Quick Links
+                    </h4>
+                    <ul class="footer_links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ai_detection.html">Technology</a></li>
+                        <li><a href="environment.html">Environment</a></li>
+                        <li><a href="index.html##page-about">Get in Touch</a></li>
+                        <li><a href="https://edusn-my.sharepoint.com/:w:/g/personal/sawlukeylaytharwah_edusnschool_co_uk/IQA7VII9sao8RoQFbBMiV3IVATWGQUy42b-7FMVu-RV_cOE?e=jAO8yl">References</a></li>
+                    </ul>
+                </div>
+
+                <!-- Technologies -->
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer_title">
+                        Technologies
+                    </h4>
+                    <ul class="footer_links">
+                        <li><a href="ai_detection.html">Artificial Intelligence</a></li>
+                        <li><a href="modern_technology.html">IoT Monitoring</a></li>
+                        <li><a href="index.html#page-smart-packaging">Smart Packaging</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer_title">
+                        Contact Info
+                    </h4>
+                    <div class="contact_item">
+                        <div class="contact_icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <p>
+                            Smart City Research Center, <br>
+                            Myanmar, Yangon, Mingaladon
+                        </p>
+                    </div>
+
+                    <div class="contact_item">
+                        <div class="contact_icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <p>
+                            mediglow@gmail.com
+                        </p>
+                    </div>
+
+                    <div class="contact_item">
+                        <div class="contact_icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <p>
+                            09962183777
+                        </p>
+                    </div>
+
+                </div>
+
+            <!-- Bottom -->
+            <div class="footer_bottom">
+                <p>
+                    © 2026 <span>MediGlow</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+</body>
+</html>
